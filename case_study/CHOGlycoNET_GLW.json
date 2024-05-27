@@ -1,0 +1,322 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "virtual": 0,
+            "LinearCode": "NNa3Ab4GNb2Ma3(NNa3Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N25"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "NNa3Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N23"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "NNa3Ab4GNb2Ma6(Ab4GNb2Ma3)Mb4GNb4(Fa6)GN;",
+            "id": "N24"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "NNa3Ab4GNb2Ma6(Ab4GNb2Ma3)Mb4GNb4GN;",
+            "id": "N20"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "NNa3Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4GN;",
+            "id": "N21"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N22"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "GNb2Ma3(GNb2(GNb6)Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N16"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "GNb2(GNb4)Ma3(GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N17"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "Ab4GNb2Ma3(GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N18"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "Ab4GNb2Ma6(GNb2Ma3)Mb4GNb4(Fa6)GN;",
+            "id": "N19"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4GN;",
+            "id": "N15"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "GNb2Ma3(GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N14"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "Ab4GNb2Ma3(GNb2Ma6)Mb4GNb4GN;",
+            "id": "N13"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "GNb2Ma3(GNb2Ma6)Mb4GNb4GN;",
+            "id": "N11"
+        },
+        {
+            "virtual": 0,
+            "LinearCode": "GNb2Ma3(Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N12"
+        },
+        {
+            "LinearCode": "Ma2Ma2Ma3(Ma2Ma3(Ma2Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N1"
+        },
+        {
+            "LinearCode": "Ma2Ma3(Ma2Ma3(Ma2Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N2"
+        },
+        {
+            "LinearCode": "Ma2Ma2Ma3(Ma2Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N3"
+        },
+        {
+            "LinearCode": "Ma3(Ma2Ma3(Ma2Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N4"
+        },
+        {
+            "LinearCode": "Ma2Ma3(Ma2Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N5"
+        },
+        {
+            "LinearCode": "Ma3(Ma2Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N6"
+        },
+        {
+            "LinearCode": "Ma3(Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N7"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N8"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ma6Ma6)Mb4GNb4GN;",
+            "id": "N9"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ma6)Mb4GNb4GN;",
+            "id": "N10"
+        }
+    ],
+    "links": [
+        {
+            "Enzyme": "a3SiaT",
+            "Reaction Index": "NR14",
+            "source": "N23",
+            "target": "N25"
+        },
+        {
+            "Enzyme": "a3SiaT",
+            "Reaction Index": "NR15",
+            "source": "N24",
+            "target": "N25"
+        },
+        {
+            "Enzyme": "a6FucT",
+            "Reaction Index": "NR16",
+            "source": "N20",
+            "target": "N24"
+        },
+        {
+            "Enzyme": "a6FucT",
+            "Reaction Index": "NR17",
+            "source": "N21",
+            "target": "N23"
+        },
+        {
+            "Enzyme": "a3SiaT",
+            "Reaction Index": "NR18",
+            "source": "N22",
+            "target": "N23"
+        },
+        {
+            "Enzyme": "a3SiaT",
+            "Reaction Index": "NR19",
+            "source": "N22",
+            "target": "N24"
+        },
+        {
+            "Enzyme": "b4GalT",
+            "Reaction Index": "NR20",
+            "source": "N18",
+            "target": "N22"
+        },
+        {
+            "Enzyme": "b4GalT",
+            "Reaction Index": "NR21",
+            "source": "N19",
+            "target": "N22"
+        },
+        {
+            "Enzyme": "a3SiaT",
+            "Reaction Index": "NR22",
+            "source": "N15",
+            "target": "N20"
+        },
+        {
+            "Enzyme": "a3SiaT",
+            "Reaction Index": "NR23",
+            "source": "N15",
+            "target": "N21"
+        },
+        {
+            "Enzyme": "a6FucT",
+            "Reaction Index": "NR24",
+            "source": "N15",
+            "target": "N22"
+        },
+        {
+            "Enzyme": "GnTV",
+            "Reaction Index": "NR25",
+            "source": "N14",
+            "target": "N16"
+        },
+        {
+            "Enzyme": "GnTIV",
+            "Reaction Index": "NR26",
+            "source": "N14",
+            "target": "N17"
+        },
+        {
+            "Enzyme": "b4GalT",
+            "Reaction Index": "NR27",
+            "source": "N14",
+            "target": "N18"
+        },
+        {
+            "Enzyme": "b4GalT",
+            "Reaction Index": "NR28",
+            "source": "N14",
+            "target": "N19"
+        },
+        {
+            "Enzyme": "a6FucT",
+            "Reaction Index": "NR29",
+            "source": "N13",
+            "target": "N18"
+        },
+        {
+            "Enzyme": "b4GalT",
+            "Reaction Index": "NR30",
+            "source": "N13",
+            "target": "N15"
+        },
+        {
+            "Enzyme": "a6FucT",
+            "Reaction Index": "NR31",
+            "source": "N11",
+            "target": "N14"
+        },
+        {
+            "Enzyme": "b4GalT",
+            "Reaction Index": "NR32",
+            "source": "N11",
+            "target": "N13"
+        },
+        {
+            "Enzyme": "GnTII",
+            "Reaction Index": "NR33",
+            "source": "N12",
+            "target": "N14"
+        },
+        {
+            "Reaction Index": "NR1",
+            "Enzyme": "ManI",
+            "source": "N1",
+            "target": "N2"
+        },
+        {
+            "Reaction Index": "NR2",
+            "Enzyme": "ManI",
+            "source": "N1",
+            "target": "N3"
+        },
+        {
+            "Reaction Index": "NR3",
+            "Enzyme": "ManI",
+            "source": "N2",
+            "target": "N4"
+        },
+        {
+            "Reaction Index": "NR4",
+            "Enzyme": "ManI",
+            "source": "N2",
+            "target": "N5"
+        },
+        {
+            "Reaction Index": "NR5",
+            "Enzyme": "ManI",
+            "source": "N3",
+            "target": "N5"
+        },
+        {
+            "Reaction Index": "NR6",
+            "Enzyme": "ManI",
+            "source": "N4",
+            "target": "N6"
+        },
+        {
+            "Reaction Index": "NR7",
+            "Enzyme": "ManI",
+            "source": "N5",
+            "target": "N6"
+        },
+        {
+            "Reaction Index": "NR8",
+            "Enzyme": "ManI",
+            "source": "N6",
+            "target": "N7"
+        },
+        {
+            "Reaction Index": "NR9",
+            "Enzyme": "GnTI",
+            "source": "N7",
+            "target": "N8"
+        },
+        {
+            "Reaction Index": "NR10",
+            "Enzyme": "ManII",
+            "source": "N8",
+            "target": "N9"
+        },
+        {
+            "Reaction Index": "NR11",
+            "Enzyme": "ManII",
+            "source": "N9",
+            "target": "N10"
+        },
+        {
+            "Reaction Index": "NR12",
+            "Enzyme": "GnTII",
+            "source": "N10",
+            "target": "N11"
+        },
+        {
+            "Reaction Index": "NR13",
+            "Enzyme": "a6FucT",
+            "source": "N10",
+            "target": "N12"
+        }
+    ]
+}

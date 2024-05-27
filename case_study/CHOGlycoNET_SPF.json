@@ -1,0 +1,438 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "LinearCode": "Ma2Ma3(Ma2Ma3(Ma2Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N2"
+        },
+        {
+            "LinearCode": "Ma2Ma2Ma3(Ma2Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N3"
+        },
+        {
+            "LinearCode": "GNb2Ma3(GNb2(GNb6)Ma6)Mb4GNb4GN;",
+            "id": "N14"
+        },
+        {
+            "LinearCode": "GNb2Ma3(NNa3Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N29"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ma6)Mb4GNb4GN;",
+            "id": "N10"
+        },
+        {
+            "LinearCode": "Ma3(Ma2Ma3(Ma2Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N4"
+        },
+        {
+            "LinearCode": "Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4GN;",
+            "id": "N19"
+        },
+        {
+            "LinearCode": "Ab4GNb2Ma3(GNb2Ma6)Mb4GNb4GN;",
+            "id": "N15"
+        },
+        {
+            "LinearCode": "Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N28"
+        },
+        {
+            "LinearCode": "GNb2Ma3(GNb2Ma6)Mb4GNb4GN;",
+            "id": "N11"
+        },
+        {
+            "LinearCode": "Ma2Ma3(Ma2Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N5"
+        },
+        {
+            "LinearCode": "Ma3(Ma2Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N6"
+        },
+        {
+            "LinearCode": "NNa3Ab4GNb2Ma3(GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N27"
+        },
+        {
+            "LinearCode": "Ma2Ma2Ma3(Ma2Ma3(Ma2Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N1"
+        },
+        {
+            "LinearCode": "GNb2(GNb4)Ma3(GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N21"
+        },
+        {
+            "LinearCode": "Ab4GNb2Ma3(NNa3Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N31"
+        },
+        {
+            "LinearCode": "Ab4GNb2Ma3(NNa3Ab4GNb2Ma6)Mb4GNb4GN;",
+            "id": "N26"
+        },
+        {
+            "LinearCode": "NNa3Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N30"
+        },
+        {
+            "LinearCode": "NNa3Ab4GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4GN;",
+            "id": "N25"
+        },
+        {
+            "LinearCode": "GNb2(GNb4)Ma3(GNb2Ma6)Mb4GNb4GN;",
+            "id": "N13"
+        },
+        {
+            "LinearCode": "GNb2Ma3(NNa3Ab4GNb2Ma6)Mb4GNb4GN;",
+            "id": "N20"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N12"
+        },
+        {
+            "LinearCode": "GNb2Ma3(GNb2(GNb6)Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N22"
+        },
+        {
+            "LinearCode": "Ma3(Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N7"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ma6Ma6)Mb4GNb4GN;",
+            "id": "N9"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4GN;",
+            "id": "N16"
+        },
+        {
+            "LinearCode": "NNa3Ab4GNb2Ma3(GNb2Ma6)Mb4GNb4GN;",
+            "id": "N18"
+        },
+        {
+            "LinearCode": "Ab4GNb2Ma3(GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N23"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ma3(Ma6)Ma6)Mb4GNb4GN;",
+            "id": "N8"
+        },
+        {
+            "LinearCode": "GNb2Ma3(Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N24"
+        },
+        {
+            "LinearCode": "GNb2Ma3(GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N17"
+        },
+        {
+            "LinearCode": "NNa3Ab4GNb2Ma3(NNa3Ab4GNb2Ma6)Mb4GNb4(Fa6)GN;",
+            "id": "N32"
+        }
+    ],
+    "links": [
+        {
+            "Reaction Index": "NR3",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N2",
+            "target": "N4"
+        },
+        {
+            "Reaction Index": "NR4",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N2",
+            "target": "N5"
+        },
+        {
+            "Reaction Index": "NR5",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N3",
+            "target": "N5"
+        },
+        {
+            "Reaction Index": "NR30",
+            "Enzyme": "a6FucT",
+            "Genes": "Fut8",
+            "source": "N14",
+            "target": "N22"
+        },
+        {
+            "Reaction Index": "NR117",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N29",
+            "target": "N31"
+        },
+        {
+            "Reaction Index": "NR12",
+            "Enzyme": "GnTII",
+            "Genes": "Mgat2",
+            "source": "N10",
+            "target": "N11"
+        },
+        {
+            "Reaction Index": "NR14",
+            "Enzyme": "a6FucT",
+            "Genes": "Fut8",
+            "source": "N10",
+            "target": "N12"
+        },
+        {
+            "Reaction Index": "NR6",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N4",
+            "target": "N6"
+        },
+        {
+            "Reaction Index": "NR59",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N19",
+            "target": "N25"
+        },
+        {
+            "Reaction Index": "NR60",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N19",
+            "target": "N26"
+        },
+        {
+            "Reaction Index": "NR32",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N15",
+            "target": "N19"
+        },
+        {
+            "Reaction Index": "NR33",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N15",
+            "target": "N18"
+        },
+        {
+            "Reaction Index": "NR112",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N28",
+            "target": "N30"
+        },
+        {
+            "Reaction Index": "NR113",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N28",
+            "target": "N31"
+        },
+        {
+            "Reaction Index": "NR15",
+            "Enzyme": "GnTIV",
+            "Genes": "Mgat4A or Mgat4B",
+            "source": "N11",
+            "target": "N13"
+        },
+        {
+            "Reaction Index": "NR16",
+            "Enzyme": "GnTV",
+            "Genes": "Mgat5",
+            "source": "N11",
+            "target": "N14"
+        },
+        {
+            "Reaction Index": "NR17",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N11",
+            "target": "N15"
+        },
+        {
+            "Reaction Index": "NR18",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N11",
+            "target": "N16"
+        },
+        {
+            "Reaction Index": "NR19",
+            "Enzyme": "a6FucT",
+            "Genes": "Fut8",
+            "source": "N11",
+            "target": "N17"
+        },
+        {
+            "Reaction Index": "NR7",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N5",
+            "target": "N6"
+        },
+        {
+            "Reaction Index": "NR8",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N6",
+            "target": "N7"
+        },
+        {
+            "Reaction Index": "NR115",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N27",
+            "target": "N30"
+        },
+        {
+            "Reaction Index": "NR1",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N1",
+            "target": "N2"
+        },
+        {
+            "Reaction Index": "NR2",
+            "Enzyme": "ManI",
+            "Genes": "Man1a1 or Man1a2 ",
+            "source": "N1",
+            "target": "N3"
+        },
+        {
+            "Reaction Index": "NR181",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N31",
+            "target": "N32"
+        },
+        {
+            "Reaction Index": "NR180",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N30",
+            "target": "N32"
+        },
+        {
+            "Reaction Index": "NR27",
+            "Enzyme": "a6FucT",
+            "Genes": "Fut8",
+            "source": "N13",
+            "target": "N21"
+        },
+        {
+            "Reaction Index": "NR62",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N20",
+            "target": "N26"
+        },
+        {
+            "Reaction Index": "NR21",
+            "Enzyme": "GnTII",
+            "Genes": "Mgat2",
+            "source": "N12",
+            "target": "N17"
+        },
+        {
+            "Reaction Index": "NR9",
+            "Enzyme": "GnTI",
+            "Genes": "Mgat1",
+            "source": "N7",
+            "target": "N8"
+        },
+        {
+            "Reaction Index": "NR11",
+            "Enzyme": "ManII",
+            "Genes": "Man2a1 or Man2a2 ",
+            "source": "N9",
+            "target": "N10"
+        },
+        {
+            "Reaction Index": "NR34",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N16",
+            "target": "N19"
+        },
+        {
+            "Reaction Index": "NR35",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N16",
+            "target": "N20"
+        },
+        {
+            "Reaction Index": "NR61",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N18",
+            "target": "N25"
+        },
+        {
+            "Reaction Index": "NR65",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N23",
+            "target": "N28"
+        },
+        {
+            "Reaction Index": "NR66",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N23",
+            "target": "N27"
+        },
+        {
+            "Reaction Index": "NR10",
+            "Enzyme": "ManII",
+            "Genes": "Man2a1 or Man2a2 ",
+            "source": "N8",
+            "target": "N9"
+        },
+        {
+            "Reaction Index": "NR68",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N24",
+            "target": "N28"
+        },
+        {
+            "Reaction Index": "NR69",
+            "Enzyme": "a3SiaT",
+            "Genes": "St3gal3 or St3gal4 or St3gal6",
+            "source": "N24",
+            "target": "N29"
+        },
+        {
+            "Reaction Index": "NR36",
+            "Enzyme": "GnTIV",
+            "Genes": "Mgat4A or Mgat4B",
+            "source": "N17",
+            "target": "N21"
+        },
+        {
+            "Reaction Index": "NR37",
+            "Enzyme": "GnTV",
+            "Genes": "Mgat5",
+            "source": "N17",
+            "target": "N22"
+        },
+        {
+            "Reaction Index": "NR38",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N17",
+            "target": "N23"
+        },
+        {
+            "Reaction Index": "NR39",
+            "Enzyme": "b4GalT",
+            "Genes": "B4galt1 or B4galt2 or B4galt3 or B4galt4 or B4galt5 or B4galt6 or B4galt7",
+            "source": "N17",
+            "target": "N24"
+        }
+    ]
+}
