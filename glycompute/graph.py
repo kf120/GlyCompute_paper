@@ -656,7 +656,7 @@ def construct_graph_with_glycowork(source_value, sink_values, json_filename):
 
     Notes
     -----
-    Glycowork can construct a network of glycosyltransferases only, i.e., it can only add monosaccharides,
+    Glycowork appears to be able to construct a network of glycosyltransferases only, i.e., it can only add monosaccharides,
     but it cannot remove monosaccharides (glycosidases). Preprocessing was done to construct a graph compatible
     with the rest of the codebase.
     """
