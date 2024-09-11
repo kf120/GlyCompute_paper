@@ -1,7 +1,7 @@
 
 # GlyCompute
 
-GlyCompute is a Python package designed to generate the results found in the paper: [paper name].
+GlyCompute is a Python package designed to generate the results found in the paper: [GlyCompute: towards the automated analysis of protein N-linked glycosylation kinetics via an open-source computational framework].
 
 ## Table of Contents
 
