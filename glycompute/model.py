@@ -7,7 +7,7 @@ Created on Mon Apr 15 12:03:49 2024
 
 import numpy as np
 
-def michaelis_menten_kinetics(N, df_from_pkl, start_N_idx, end_N_idx, enzyme, protein, input_params, est_params):
+def michaelis_menten_kinetics(N, df_from_pkl, start_N_idx_1, end_N_idx_1, start_N_idx_2, end_N_idx_2, enzyme, protein_1, protein_2, input_params, est_params):
     """
     Calculate reaction rates using Michaelis-Menten kinetics.
 
@@ -17,14 +17,20 @@ def michaelis_menten_kinetics(N, df_from_pkl, start_N_idx, end_N_idx, enzyme, pr
         Array of glycans species concentrations.
     df_from_pkl : dict
         Dictionary containing various data structures for pathway analysis.
-    start_N_idx : int
-        Starting index for glycan species in Golgi commpartment.
-    end_N_idx : int
-        Ending index for glycan species in Golgi commpartment.
+    start_N_idx_1 : int
+        Starting index for glycan species for protein 1 in Golgi commpartment.
+    end_N_idx_1 : int
+        Ending index for glycan species for protein 1 in Golgi commpartment.
+    start_N_idx_2 : int
+        Starting index for glycan species for protein 2 in Golgi commpartment.
+    end_N_idx_2 : int
+        Ending index for glycan species for protein 2 in Golgi commpartment.    
     enzyme : str
         The enzyme involved in the reaction.
-    protein : str
-        The protein involved in the reaction.
+    protein_1 : str
+        Protein 1 involved in the reaction.
+    protein_2 : str
+        Protein 2 involved in the reaction.
     input_params : dict
         Dictionary of input parameters required for the simulation.
     est_params : dict
@@ -35,11 +41,16 @@ def michaelis_menten_kinetics(N, df_from_pkl, start_N_idx, end_N_idx, enzyme, pr
     numpy.ndarray
         The calculated reaction rates.
     """
-    S = df_from_pkl['rn_spec'][enzyme][start_N_idx:end_N_idx] @ N[start_N_idx:end_N_idx] / est_params['Km'][enzyme][protein]
-    N_NR = N[start_N_idx:end_N_idx] @ np.abs(df_from_pkl['F_sub'][0:df_from_pkl['F_sub_comp'].shape[0], :])
-    return (df_from_pkl['n'][enzyme] * est_params['cENZ'][enzyme] * df_from_pkl['localization'][enzyme] * input_params['kf'][enzyme] * N_NR) / (est_params['Km'][enzyme][protein] * (1 + S))
+    S1 = df_from_pkl['rn_spec'][enzyme][start_N_idx_1:end_N_idx_1] @ N[start_N_idx_1:end_N_idx_1] / est_params['Km'][enzyme][protein_1]
+    S2 = df_from_pkl['rn_spec'][enzyme][start_N_idx_2:end_N_idx_2] @ N[start_N_idx_2:end_N_idx_2] / est_params['Km'][enzyme][protein_2]
+    N_NR_1 = N[start_N_idx_1:end_N_idx_1] @ np.abs(df_from_pkl['F_sub'][0:df_from_pkl['F_sub_comp'].shape[0], :])
+    N_NR_2 = N[start_N_idx_2:end_N_idx_2] @ np.abs(df_from_pkl['F_sub'][0:df_from_pkl['F_sub_comp'].shape[0], :])
+    
+    r1 = (df_from_pkl['n'][enzyme] * est_params['cENZ'][enzyme] * df_from_pkl['localization'][enzyme] * input_params['kf'][enzyme] * N_NR_1) / (est_params['Km'][enzyme][protein_1] * (1 + S1 + S2))
+    r2 = (df_from_pkl['n'][enzyme] * est_params['cENZ'][enzyme] * df_from_pkl['localization'][enzyme] * input_params['kf'][enzyme] * N_NR_2) / (est_params['Km'][enzyme][protein_2] * (1 + S1 + S2))
+    return r1, r2
 
-def sequential_bi_bi_kinetics(N, df_from_pkl, start_N_idx, end_N_idx, enzyme, protein, input_params, est_params, NSD_key):
+def sequential_bi_bi_kinetics(N, df_from_pkl, start_N_idx_1, end_N_idx_1, start_N_idx_2, end_N_idx_2, enzyme, protein_1, protein_2, input_params, est_params, NSD_key):
     """
     Calculate reaction rates using sequential Bi-Bi kinetics.
 
@@ -49,14 +60,20 @@ def sequential_bi_bi_kinetics(N, df_from_pkl, start_N_idx, end_N_idx, enzyme, pr
         Array of glycans species concentrations.
     df_from_pkl : dict
         Dictionary containing various data structures for pathway analysis.
-    start_N_idx : int
-        Starting index for glycan species in Golgi commpartment.
-    end_N_idx : int
-        Ending index for glycan species in Golgi commpartment.
+    start_N_idx_1 : int
+        Starting index for glycan species for protein 1 in Golgi commpartment.
+    end_N_idx_1 : int
+        Ending index for glycan species for protein 1 in Golgi commpartment.
+    start_N_idx_2 : int
+        Starting index for glycan species for protein 2 in Golgi commpartment.
+    end_N_idx_2 : int
+        Ending index for glycan species for protein 2 in Golgi commpartment.    
     enzyme : str
         The enzyme involved in the reaction.
-    protein : str
-        The protein involved in the reaction.
+    protein_1 : str
+        Protein 1 involved in the reaction.
+    protein_2 : str
+        Protein 2 involved in the reaction.
     input_params : dict
         Dictionary of input parameters required for the simulation.
     est_params : dict
@@ -69,10 +86,16 @@ def sequential_bi_bi_kinetics(N, df_from_pkl, start_N_idx, end_N_idx, enzyme, pr
     numpy.ndarray
         The calculated reaction rates.
     """
-    S = df_from_pkl['rn_spec'][enzyme][start_N_idx:end_N_idx] @ N[start_N_idx:end_N_idx] / est_params['Km'][enzyme][protein]
-    N_NR = N[start_N_idx:end_N_idx] @ np.abs(df_from_pkl['F_sub'][0:df_from_pkl['F_sub_comp'].shape[0], :])
-    return (df_from_pkl['n'][enzyme] * est_params['cENZ'][enzyme] * df_from_pkl['localization'][enzyme] * input_params['kf'][enzyme] * input_params['cNSD'][NSD_key]['golg'] * N_NR) / (
-        est_params['Km'][enzyme][protein] * input_params['Kmd'][enzyme][protein] * (1 + (input_params['cNSD'][NSD_key]['golg'] / input_params['Kmd'][enzyme][protein]) * (1 + S)))
+    
+    S1 = df_from_pkl['rn_spec'][enzyme][start_N_idx_1:end_N_idx_1] @ N[start_N_idx_1:end_N_idx_1] / est_params['Km'][enzyme][protein_1]
+    S2 = df_from_pkl['rn_spec'][enzyme][start_N_idx_2:end_N_idx_2] @ N[start_N_idx_2:end_N_idx_2] / est_params['Km'][enzyme][protein_2]
+    N_NR_1 = N[start_N_idx_1:end_N_idx_1] @ np.abs(df_from_pkl['F_sub'][0:df_from_pkl['F_sub_comp'].shape[0], :])
+    N_NR_2 = N[start_N_idx_2:end_N_idx_2] @ np.abs(df_from_pkl['F_sub'][0:df_from_pkl['F_sub_comp'].shape[0], :])
+    
+    r1 = (df_from_pkl['n'][enzyme] * est_params['cENZ'][enzyme] * df_from_pkl['localization'][enzyme] * input_params['kf'][enzyme] * input_params['cNSD'][NSD_key]['golg'] * N_NR_1) / (est_params['Km'][enzyme][protein_1] * input_params['Kmd'][enzyme][protein_1] * (1 + (input_params['cNSD'][NSD_key]['golg'] / input_params['Kmd'][enzyme][protein_1]) * (1 + S1 + S2)))
+    r2 = (df_from_pkl['n'][enzyme] * est_params['cENZ'][enzyme] * df_from_pkl['localization'][enzyme] * input_params['kf'][enzyme] * input_params['cNSD'][NSD_key]['golg'] * N_NR_2) / (est_params['Km'][enzyme][protein_2] * input_params['Kmd'][enzyme][protein_2] * (1 + (input_params['cNSD'][NSD_key]['golg'] / input_params['Kmd'][enzyme][protein_2]) * (1 + S1 + S2)))
+
+    return r1, r2
 
 # GlycoSimModel description (function)
 def GlycoSimModel(N, df_from_pkl, input_params, est_params):   
@@ -134,23 +157,17 @@ def GlycoSimModel(N, df_from_pkl, input_params, est_params):
         indices_NR = (Reactions * c, Reactions * (c + 1))
         
         # Michaelis-Menten Kinetics for ManI and ManII
-        NR_ManI_IgG = michaelis_menten_kinetics(N, df_from_pkl, *indices_N_IgG, 'ManI', 'IgG', input_params, est_params)
-        NR_ManI_HCP = michaelis_menten_kinetics(N, df_from_pkl, *indices_N_HCP, 'ManI', 'HCP', input_params, est_params)
-        NR_ManII_IgG = michaelis_menten_kinetics(N, df_from_pkl, *indices_N_IgG, 'ManII', 'IgG', input_params, est_params)
-        NR_ManII_HCP = michaelis_menten_kinetics(N, df_from_pkl, *indices_N_HCP, 'ManII', 'HCP', input_params, est_params)
+        NR_ManI_IgG, NR_ManI_HCP = michaelis_menten_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'ManI', 'IgG', 'HCP', input_params, est_params)
+        NR_ManII_IgG, NR_ManII_HCP = michaelis_menten_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'ManII', 'IgG', 'HCP', input_params, est_params)
 
         # Sequential Bi-Bi Kinetics for other enzymes
-        NR_GnTI_IgG = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, 'GnTI', 'IgG', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTI_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_HCP, 'GnTI', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTII_IgG = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, 'GnTII', 'IgG', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTII_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_HCP, 'GnTII', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTIV_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_HCP, 'GnTIV', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTV_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_HCP, 'GnTV', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_a6FucT_IgG = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, 'a6FucT', 'IgG', input_params, est_params, 'GDPFuc')
-        NR_a6FucT_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_HCP, 'a6FucT', 'HCP', input_params, est_params, 'GDPFuc')
-        NR_b4GalT_IgG = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, 'b4GalT', 'IgG', input_params, est_params, 'UDPGal')
-        NR_b4GalT_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_HCP, 'b4GalT', 'HCP', input_params, est_params, 'UDPGal')
-        NR_a3SiaT_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_HCP, 'a3SiaT', 'HCP', input_params, est_params, 'CMPNeuAc')
+        NR_GnTI_IgG, NR_GnTI_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTI', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        NR_GnTII_IgG, NR_GnTII_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTII', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        _, NR_GnTIV_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTIV', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        _, NR_GnTV_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTV', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        NR_a6FucT_IgG, NR_a6FucT_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'a6FucT', 'IgG', 'HCP', input_params, est_params, 'GDPFuc')
+        NR_b4GalT_IgG, NR_b4GalT_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'b4GalT', 'IgG', 'HCP', input_params, est_params, 'UDPGal')
+        _, NR_a3SiaT_HCP = sequential_bi_bi_kinetics(N, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'a3SiaT', 'IgG', 'HCP', input_params, est_params, 'CMPNeuAc')
 
         # Calculate total reaction rates
         NR_IgG = sum([NR_ManI_IgG, NR_ManII_IgG, NR_GnTI_IgG, NR_GnTII_IgG, NR_a6FucT_IgG, NR_b4GalT_IgG])

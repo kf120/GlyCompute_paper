@@ -237,24 +237,18 @@ def get_reaction_rates(N_f, df_from_pkl, input_params, est_params):
         indices_N_HCP = (Species * Compartments + Species * c, Species * Compartments + Species * (c + 1))
        
         # Michaelis-Menten Kinetics for ManI and ManII
-        NR_ManI_IgG = michaelis_menten_kinetics(N_f, df_from_pkl, *indices_N_IgG, 'ManI', 'IgG', input_params, est_params)
-        NR_ManI_HCP = michaelis_menten_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'ManI', 'HCP', input_params, est_params)
-        NR_ManII_IgG = michaelis_menten_kinetics(N_f, df_from_pkl, *indices_N_IgG, 'ManII', 'IgG', input_params, est_params)
-        NR_ManII_HCP = michaelis_menten_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'ManII', 'HCP', input_params, est_params)
-        
+        NR_ManI_IgG, NR_ManI_HCP = michaelis_menten_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'ManI', 'IgG', 'HCP', input_params, est_params)
+        NR_ManII_IgG, NR_ManII_HCP = michaelis_menten_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'ManII', 'IgG', 'HCP', input_params, est_params)
+
         # Sequential Bi-Bi Kinetics for other enzymes
-        NR_GnTI_IgG = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, 'GnTI', 'IgG', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTI_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'GnTI', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTII_IgG = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, 'GnTII', 'IgG', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTII_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'GnTII', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTIV_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'GnTIV', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_GnTV_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'GnTV', 'HCP', input_params, est_params, 'UDPGlcNAc')
-        NR_a6FucT_IgG = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, 'a6FucT', 'IgG', input_params, est_params, 'GDPFuc')
-        NR_a6FucT_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'a6FucT', 'HCP', input_params, est_params, 'GDPFuc')
-        NR_b4GalT_IgG = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, 'b4GalT', 'IgG', input_params, est_params, 'UDPGal')
-        NR_b4GalT_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'b4GalT', 'HCP', input_params, est_params, 'UDPGal')
-        NR_a3SiaT_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_HCP, 'a3SiaT', 'HCP', input_params, est_params, 'CMPNeuAc')
-        
+        NR_GnTI_IgG, NR_GnTI_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTI', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        NR_GnTII_IgG, NR_GnTII_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTII', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        _, NR_GnTIV_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTIV', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        _, NR_GnTV_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'GnTV', 'IgG', 'HCP', input_params, est_params, 'UDPGlcNAc')
+        NR_a6FucT_IgG, NR_a6FucT_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'a6FucT', 'IgG', 'HCP', input_params, est_params, 'GDPFuc')
+        NR_b4GalT_IgG, NR_b4GalT_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'b4GalT', 'IgG', 'HCP', input_params, est_params, 'UDPGal')
+        _, NR_a3SiaT_HCP = sequential_bi_bi_kinetics(N_f, df_from_pkl, *indices_N_IgG, *indices_N_HCP, 'a3SiaT', 'IgG', 'HCP', input_params, est_params, 'CMPNeuAc')
+
         # Calculate total reaction rates
         NR_IgG = sum([NR_ManI_IgG, NR_ManII_IgG, NR_GnTI_IgG, NR_GnTII_IgG, NR_a6FucT_IgG, NR_b4GalT_IgG])
         NR_HCP = sum([NR_ManI_HCP, NR_ManII_HCP, NR_GnTI_HCP, NR_GnTII_HCP, NR_GnTIV_HCP, NR_GnTV_HCP, NR_a6FucT_HCP, NR_b4GalT_HCP, NR_a3SiaT_HCP]) # same indices as above
