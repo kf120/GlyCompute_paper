@@ -131,11 +131,11 @@ def main():
     Kmd = {
             "GnTI": {"IgG": 170., "HCP": 170.},
             "GnTII": {"IgG": 960., "HCP": 960.},
-            "GnTIV": {"HCP": 8300},
-            "GnTV": {"HCP": 5390},
+            "GnTIV": {"IgG": 8300, "HCP": 8300},
+            "GnTV": {"IgG": 5390, "HCP": 5390},
             "a6FucT": {"IgG": 46., "HCP": 46.},
             "b4GalT": {"IgG": 65., "HCP": 65.},
-            "a3SiaT": {"HCP": 57.}
+            "a3SiaT": {"IgG": 57., "HCP": 57.}
         }
     
     # Precursor molecule concentrations in the cytosol (mM) (taken from Pavlos' PhD, p. 169, Fig. 5.6)
@@ -212,9 +212,11 @@ def main():
             'Km_GnTII_HCP': 10000,
             
             'cENZ_GnTIV': 0,
+            'Km_GnTIV_IgG': 1E-12,
             'Km_GnTIV_HCP': 10000,
     
             'cENZ_GnTV': 0,
+            'Km_GnTV_IgG': 1E-12,
             'Km_GnTV_HCP': 10000,
             
             'cENZ_a6FucT': 0,
@@ -226,6 +228,7 @@ def main():
             'Km_b4GalT_HCP': 10000,
             
             'cENZ_a3SiaT': 0,
+            'Km_a3SiaT_IgG': 1E-12,
             'Km_a3SiaT_HCP': 10000
         }
         
