@@ -134,7 +134,7 @@ def GlycoSimModel(N, df_from_pkl, input_params, est_params):
     # Initialize arrays for residuals
     dN = np.zeros((Species*Compartments*Proteins, ))
 
-    # Linear velocity (L/min) according to del Val et al. (2016)
+    # Linear velocity (Golgi length/min) according to del Val et al. (2016)
     # MW (g/mol = Da), q (mg/h)
     Vel_IgG = (input_params['q_IgG'] / input_params['N1in']) * (1 / input_params['MW_IgG']) * 1000 * 1/60 * (1 / input_params['V_golg']) * input_params['GS_IgG']
     Vel_HCP = (input_params['q_HCP'] / input_params['N1in']) * (1 / input_params['MW_HCP']) * 1000 * 1/60 * (1 / input_params['V_golg']) * input_params['GS_HCP']
